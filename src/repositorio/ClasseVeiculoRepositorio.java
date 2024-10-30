@@ -12,7 +12,9 @@ public class ClasseVeiculoRepositorio extends BaseRepositorio<ClasseVeiculo>{
 
     @Override
     public ClasseVeiculo Create(ClasseVeiculo instancia) {
-        int proxChave = this.fonteDeDados.get(this.fonteDeDados.size() - 1).getCodigo() + 1;       
+        int pos = this.fonteDeDados.size() - 1;
+        ClasseVeiculo cp = this.fonteDeDados.get(pos);
+        int proxChave = cp.getCodigo() + 1;
         instancia.setCodigo(proxChave);
         this.fonteDeDados.add(instancia);
         return instancia;
